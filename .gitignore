@@ -1,0 +1,16 @@
+# Rust build directory
+target/
+**/target/
+
+# OS-generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# SQLite / databases (optional, but good practice to keep out of repository)
+*.db
+*.sqlite

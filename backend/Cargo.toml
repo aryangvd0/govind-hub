@@ -1,0 +1,54 @@
+[package]
+name = "govind-backend"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# The Core Web Server
+axum = { version = "0.8", features = ["multipart", "ws"] }
+tokio = { version = "1.35", features = ["full"] }
+tracing = "0.1"
+tracing-subscriber = "0.3"
+tower = { version = "0.5", features = ["limit", "buffer", "util"] }
+tower-http = { version = "0.6", features = ["cors", "trace", "fs", "set-header", "limit"] }
+
+# NEW: The SQLite Database Engine
+sqlx = { version = "0.8.6", default-features = false, features = ["sqlite", "runtime-tokio", "macros"] }
+
+# Cryptography & Zero-Knowledge Proofs
+ark-groth16 = "0.6.0"
+ark-bls12-381 = "0.6.0"
+ed25519-dalek = "2.1"
+sha2 = "0.10"
+rsa = { version = "0.9", features = ["sha2"] }
+argon2 = "0.5"
+hmac = "0.12"
+ml-kem = "0.2"
+fips204 = "0.4.6"
+hex = "0.4"
+
+# Database & Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+postcard = { version = "1.0", features = ["alloc"] }
+bincode = "1.3"
+maud = { version = "0.26", features = ["axum"] }
+
+# JWT & Utilities
+jsonwebtoken = "10.3"
+async-trait = "0.1"
+
+# Utilities
+rand = "0.8"
+once_cell = "1.21.4"
+uuid = { version = "1.8.0", features = ["v4"] }
+infer = "0.16"
+image = "0.24"
+lopdf = "0.32"
+zip = "2.1"
+kamadak-exif = "0.5"
+subtle = "2.5"
+
+[[bin]]
+name = "backend"
+path = "src/bmainxsdfhn.rs"
